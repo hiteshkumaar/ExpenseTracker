@@ -40,7 +40,6 @@ useEffect(() => {
     //load data from local storage if present
     const localData = localStorage.getItem("expenses");
     if(localData){
-      const {transactionData} = JSON.parse(localData);
       setTransactionData(transactionData);
     }
   }
