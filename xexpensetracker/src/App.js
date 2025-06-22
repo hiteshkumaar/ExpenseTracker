@@ -28,11 +28,12 @@ function App() {
 
 useEffect(() => {
   if (!initialRender.current) {
-    localStorage.setItem("allData", JSON.stringify(transactionData));
+    localStorage.setItem("allData", JSON.stringify({ money, transactionData }));
   } else {
     initialRender.current = false;
   }
-}, [transactionData]);
+}, [transactionData, money]);
+
 
   //functions
   const onLoad = () => {
