@@ -46,5 +46,12 @@ export const dummyData = [
       price: 500,
       id: 171146023857578
     },
+      {
+    name: "Gym",
+    date: "2024-12-20",
+    category: "entertainment",
+    price: 1000,
+    id: 1718960238000 // Use a unique timestamp-like ID
+  }
   ]
 

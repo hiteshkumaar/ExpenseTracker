@@ -26,21 +26,20 @@ function App() {
     })
   }, [])
 
-  useEffect(()=> {
-    //save data to local storage and if it is initial render skip saving
-    if(!initialRender.current) localStorage.setItem("allData", JSON.stringify({money, transactionData}));
-  }, [money, transactionData])
+useEffect(() => {
+  if (!initialRender.current) {
+    localStorage.setItem("expenses", JSON.stringify(transactionData));
+  } else {
+    initialRender.current = false;
+  }
+}, [transactionData]);
 
   //functions
-  const onLoad = () => {
-    //load data from local storage if present
-    const localData = localStorage.getItem("allData");
-    if(localData){
-      const {money, transactionData} = JSON.parse(localData);
-      setMoney(money);
-      setTransactionData(transactionData);
-    }
-  }
+const localData = localStorage.getItem("expenses");
+if (localData) {
+  const transactions = JSON.parse(localData);
+  setTransactionData(transactions);
+}
   
 
   return (
