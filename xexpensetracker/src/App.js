@@ -35,11 +35,15 @@ useEffect(() => {
 }, [transactionData]);
 
   //functions
-const localData = localStorage.getItem("expenses");
-if (localData) {
-  const transactions = JSON.parse(localData);
-  setTransactionData(transactions);
-}
+  const onLoad = () => {
+    //load data from local storage if present
+    const localData = localStorage.getItem("expenses");
+    if(localData){
+      const {money, transactionData} = JSON.parse(localData);
+      setMoney(money);
+      setTransactionData(transactionData);
+    }
+  }
   
 
   return (
