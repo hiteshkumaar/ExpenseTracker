@@ -13,7 +13,7 @@ import { dummyData } from './dummyTransactions';
 function App() {
   const [money, setMoney] = useState({
     balance: 5000,
-    expenses: 1200
+    expenses: 0
   })
   const [transactionData, setTransactionData] = useState(dummyData);
   const initialRender = useRef(true);
