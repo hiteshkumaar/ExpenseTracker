@@ -4,7 +4,7 @@ import "./Button.css"
 
 const Button = props => {
     //props
-    const { text, background, buttonSize, icon, clickFunction, buttonType } = props;
+    const { text, background, buttonSize, icon, clickFunction, buttonType = 'button' } = props;
     return (
         <button 
         className={`Button ${buttonSize} ${background}`}
