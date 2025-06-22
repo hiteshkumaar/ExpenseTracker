@@ -12,7 +12,7 @@ import { dummyData } from './dummyTransactions';
 
 function App() {
   const [money, setMoney] = useState({
-    balance: 3800,
+    balance: 5000,
     expenses: 1200
   })
   const [transactionData, setTransactionData] = useState(dummyData);
