@@ -29,11 +29,11 @@ const ModalForm = props => {
         console.log(existingData)
         const {name, date, amount, category} = existingData;
         setFormData({
-            name: name,
+            title: name,
             price: amount,
             date: date,
             category: category
-        })
+        });
     }
     const handleChange = evt => {
         const key = evt.target.name, value = evt.target.value;
@@ -56,7 +56,7 @@ const ModalForm = props => {
                 return alert("Out of balance");
             }else{
                 let newId = new Date / 1;
-                let newTransaction = {...formData, id: newId};
+                let newTransaction = {...formData,name: formData.title, id: newId};
                 setMoney({balance: newBalance, expenses: newExpense});
                 setTransactionData([...transactionData, newTransaction]);
             }
