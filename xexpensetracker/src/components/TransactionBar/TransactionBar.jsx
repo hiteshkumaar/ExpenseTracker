@@ -25,9 +25,9 @@ const TransactionBar = props => {
     //functions
     const toggleModal = () => setModalOn(!modalOn);
     const selectIcon = () => {
-        if(category === "food") return foodIcon;
-        if(category === "entertainment") return movieIcon;
-        if(category === "travel") return travelIcon;
+        if(category === "Food") return foodIcon;
+        if(category === "Entertainment") return movieIcon;
+        if(category === "Travel") return travelIcon;
     }
     const deleteTransaction = () => {
         const indexOfTransaction = transactionData.findIndex(item => id === item.id);
