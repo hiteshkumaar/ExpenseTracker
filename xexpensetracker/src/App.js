@@ -28,7 +28,7 @@ function App() {
 
 useEffect(() => {
   if (!initialRender.current) {
-    localStorage.setItem("expenses", JSON.stringify({ transactionData }));
+    localStorage.setItem("expenses", JSON.stringify(transactionData));
   } else {
     initialRender.current = false;
   }
@@ -36,14 +36,13 @@ useEffect(() => {
 
 
   //functions
-  const onLoad = () => {
-    //load data from local storage if present
-    const localData = localStorage.getItem("expenses");
-    if(localData){
-      setTransactionData(transactionData);
-    }
+const onLoad = () => {
+  const localData = localStorage.getItem("expenses");
+  if (localData) {
+    const parsedData = JSON.parse(localData);
+    setTransactionData(parsedData);
   }
-  
+}
 
   return (
     <main className='App'>
